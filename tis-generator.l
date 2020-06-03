@@ -21,9 +21,10 @@
    )
    *F
    (quote
-      verify wipe lock_unlock blake2b
-      argon key_exchange sign_check hchacha
-      chacha20_init chacha20_x_init p1305 x25519 sha512
+      # verify wipe lock_unlock blake2b
+      # argon key_exchange sign_check hchacha
+      # chacha20_init chacha20_x_init p1305 x25519 sha512
+      sha512
    )
    *L
    (make
