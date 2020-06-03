@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "monocypher.h"
+#include "sha512.h"
 
 // SKIP:
 // crypto_lock_encrypt
@@ -121,7 +122,12 @@ void x25519(void) {
     crypto_x25519(shr, key, pub);
 }
 
-
+void sha512(void) {
+    ARRAY(hash,  64);
+    ARRAY(in  , 128);
+    crypto_sha512(hash, in,   0);
+    crypto_sha512(hash, in, 128);
+}
 
 int main(void) {
     verify();
@@ -136,5 +142,6 @@ int main(void) {
     chacha20_x_init();
     p1305();
     x25519();
+    sha512();
     return 0;
 }
